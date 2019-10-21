@@ -1,0 +1,10 @@
+:root {
+  --header-color: #2C405A;
+  --header-height: 50px;
+  --main-font:  -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  --brand-color: #6190E8;
+}
+
+.br {
+  margin-bottom: 10px;
+}
