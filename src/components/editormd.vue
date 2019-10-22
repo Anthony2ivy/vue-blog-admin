@@ -1,6 +1,6 @@
 <template>
   <div id="editormd">
-    <textarea style="display:none;">### Hello Editor.md !</textarea>
+    <textarea style="display:none;"></textarea>
   </div>
 </template>
 
@@ -31,4 +31,7 @@
 </script>
 
 <style scoped>
+  #editormd{
+    width: 100%!important;
+  }
 </style>
