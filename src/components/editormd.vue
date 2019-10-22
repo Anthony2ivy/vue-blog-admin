@@ -11,14 +11,18 @@
     methods: {
     },
     mounted: () => {
-      $.getScript('static/lib/editormd/editormd.min.js',function () {
+      $.getScript('static/editormd/editormd.min.js',function () {
+          $.getScript('static/editormd/plugins/copy-image/copy-image.js')
           var editor = window.editormd("editormd", {
-              path: "static/lib/editormd/lib/",
+              path: "static/editormd/lib/",
               width:'90%',
               height:'560px',
               imageUpload    : true,
               imageFormats   : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-              imageUploadURL : "http://localhost:3000/rest/static/img"
+              imageUploadURL : "http://localhost:3000/rest/static/img",
+              onload:function () {
+                  this.copyImage();
+              }
           });
       });
     },
