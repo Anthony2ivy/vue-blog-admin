@@ -3,7 +3,7 @@
     <Breadcrumb>
       <Card shadow class="full-card">
         <p slot="title">
-          <BreadcrumbItem >
+          <BreadcrumbItem>
             <Icon type="md-home"></Icon>
             发布新博客
           </BreadcrumbItem>
@@ -14,10 +14,13 @@
               <Input v-model="uploadBlogForm.title" style="max-width: 700px"></Input>
             </FormItem>
             <FormItem label="简介">
-              <Input v-model="uploadBlogForm.remark" type="textarea" style="max-width: 700px"></Input>
+              <Input v-model="uploadBlogForm.intro" type="textarea" style="max-width: 700px"></Input>
+            </FormItem>
+            <FormItem label="标签">
+              <TagInput v-model="uploadBlogForm.tags"></TagInput>
             </FormItem>
             <FormItem label="详细内容">
-              <editormd></editormd>
+              <editormd ref=""></editormd>
             </FormItem>
           </Form>
         </div>
@@ -28,21 +31,28 @@
 </template>
 
 <script>
-  import editormd from '../components/editormd'
-  export default {
-    name: "newBlogPage",
-    data:function () {
-      return {
-        uploadBlogForm:{},
-        uploadEditor:{}
-      };
-    },
-    mounted: function () {
-    },
-    components:{
-      "Editormd":editormd
+    import Editormd from '../components/Editormd'
+    import TagInput from "../components/TagInput";
+
+    export default {
+        name: "newBlogPage",
+        data: function () {
+            return {
+                uploadBlogForm: {
+                    title:"",
+                    intro:"",
+                    tags:[]
+                },
+                uploadEditor: {},
+            };
+        },
+        mounted: function () {
+        },
+        components: {
+            "Editormd": Editormd,
+            "TagInput": TagInput
+        }
     }
-  }
 </script>
 
 <style scoped>

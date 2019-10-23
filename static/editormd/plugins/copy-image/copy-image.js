@@ -2,7 +2,7 @@
  * Link dialog plugin for Editor.md
  *
  * @file        link-dialog.js
- * @author      pandao
+ * @author      Anthony
  * @version     1.2.0
  * @updateTime  2015-03-07
  * {@link       https://github.com/pandao/editor.md}
@@ -10,9 +10,9 @@
  */
 
 (function() {
-  
+
   var factory = function(exports) {
-    
+
     exports.fn.uploadImage = function(imageFile) {
       var _this = this;
       return new Promise(((resolve, reject) => {
@@ -40,7 +40,7 @@
       }));
     };
     exports.fn.copyImage = function() {
-      
+
       var _this = this; // this == the current instance object of Editor.md
       var cm = this.cm;
       var lang = _this.lang;
@@ -84,11 +84,11 @@
           }
         }
       });
-      
+
     };
-    
+
   };
-  
+
   // CommonJS/Node.js
   if (typeof require === 'function' && typeof exports === 'object' &&
     typeof module === 'object') {
@@ -96,11 +96,11 @@
   } else if (typeof define === 'function')  // AMD/CMD/Sea.js
   {
     if (define.amd) { // for Require.js
-      
+
       define(['editormd'], function(editormd) {
         factory(editormd);
       });
-      
+
     } else { // for Sea.js
       define(function(require) {
         var editormd = require('./../../editormd');
@@ -110,5 +110,5 @@
   } else {
     factory(window.editormd);
   }
-  
+
 })();
