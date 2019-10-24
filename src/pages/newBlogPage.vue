@@ -20,7 +20,10 @@
               <TagInput v-model="uploadBlogForm.tags"></TagInput>
             </FormItem>
             <FormItem label="详细内容">
-              <editormd ref=""></editormd>
+              <editormd ref="editor"></editormd>
+            </FormItem>
+            <FormItem>
+              <Button type="primary" @click="submitForm">提交</Button>
             </FormItem>
           </Form>
         </div>
@@ -39,9 +42,9 @@
         data: function () {
             return {
                 uploadBlogForm: {
-                    title:"",
-                    intro:"",
-                    tags:[]
+                    title: "",
+                    intro: "",
+                    tags: []
                 },
                 uploadEditor: {},
             };
@@ -51,6 +54,10 @@
         components: {
             "Editormd": Editormd,
             "TagInput": TagInput
+        }, methods: {
+            submitForm() {
+
+            }
         }
     }
 </script>

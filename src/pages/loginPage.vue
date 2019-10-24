@@ -35,7 +35,9 @@
         });
       },
     },
-    mounted: {},
+    mounted:function () {
+
+    },
   };
 </script>
 

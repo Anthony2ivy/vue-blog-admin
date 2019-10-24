@@ -8,16 +8,16 @@ let blogService = {
     withCredentials: true,
   }),
 };
-blogService.checkLogin = function() {
+blogService.checkLogin = function () {
   return new Promise((resolve, reject) => {
-    this.axios.post('/rest/login',{username: 'test', password:'test'}).then(() => {
+    this.axios.post('/rest/login', {username: 'test', password: 'test'}).then(() => {
       resolve();
     }).catch(e => {
       reject(e);
     });
   });
 };
-blogService.login = function(userName, password) {
+blogService.login = function (userName, password) {
   return new Promise((resolve, reject) => {
     this.axios.post('/rest/login', {username: userName, password}).then(() => {
       resolve();
@@ -27,7 +27,7 @@ blogService.login = function(userName, password) {
   });
 };
 
-blogService.logout = function() {
+blogService.logout = function () {
   return new Promise((resolve, reject) => {
     this.axios.get('/rest/logout').then(() => {
       resolve();
@@ -36,5 +36,11 @@ blogService.logout = function() {
     });
   });
 };
+
+blogService.postBlog = function (body) {
+  return new Promise(((resolve, reject) => {
+    this.axios.post()
+  }));
+}
 
 export default blogService;

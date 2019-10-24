@@ -1,10 +1,10 @@
 <template>
-  <di>
+  <div>
     <Input prefix="md-pricetags" clearable @on-enter="addTag" v-model="inputValue" placeholder="请输入标签" style="max-width: 300px" ></Input>
     <div class="tag-list" style="margin-top: 10px">
       <Tag type="border"  size="medium" v-for="item in tagList" :key="item" :name="item" closable @on-close="tagClose">{{item}}</Tag>
     </div>
-  </di>
+  </div>
 </template>
 
 <script>
